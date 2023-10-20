@@ -37,7 +37,19 @@ namespace Xadrez.Entities.Tabuleiros
                 throw new TabuleiroException("Já existe uma pea nesta posição!");
             }
             Pecas[pos.Linha, pos.Coluna] = p;
-            p.Posicao = pos;
+            p.posicao = pos;
+        }
+
+        public Peca removePeca(Posicao pos)
+        {
+            if (peca(pos) == null) 
+            {
+                return null;
+            }
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            Pecas[pos.Linha, pos.Coluna] = null;
+            return aux;
         }
 
         public bool PosicaoValida(Posicao pos)

@@ -15,7 +15,7 @@ namespace Xadrez.Entities.Pecas
 
         public Posicao toPosicao()
         {
-            return new Posicao(8 - Linha,'a' - Coluna);
+            return new Posicao(Coluna - 'a', 8 - Linha);
         }
 
         public override string ToString()

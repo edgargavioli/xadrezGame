@@ -6,7 +6,7 @@ namespace Xadrez.Entities.Tabuleiros
         public int Linha { get; set; }
         public int Coluna { get; set; }
 
-        public Posicao(int linha, int coluna) 
+        public Posicao(int coluna, int linha) 
         { 
             Linha = linha;
             Coluna = coluna;

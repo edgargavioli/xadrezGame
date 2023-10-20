@@ -1,23 +1,28 @@
 ﻿using Xadrez;
 using Xadrez.Entities.Tabuleiros;
 using Xadrez.Entities.Pecas;
-
-Tabuleiro tab = new Tabuleiro(8, 8);
+using Xadrez.Entities.Xadrez;
 
 try
 {
     PosicaoXadrez pos = new PosicaoXadrez('a',1);
+    PartidaXadrez partida = new PartidaXadrez();
+    while (!partida.terminada)
+    {
+        Console.Clear();
+        Tela.ImprimirTabuleiro(partida.Tab);
+        Console.WriteLine();
+        Console.Write("Origem: ");
+        Posicao origem = Tela.LerPosicaoXadrez().toPosicao();
+        Console.Write("Destino: ");
+        Posicao destino = Tela.LerPosicaoXadrez().toPosicao();
+        Console.WriteLine(origem +" "+ destino);
 
-    Console.WriteLine(pos);
+        partida.ExecutaMovimento(origem, destino);
+    }
 
-    Console.WriteLine(pos.toPosicao());
-
-    tab.AddPeca(new Torre(Cor.Preta, tab), new Posicao(0, 0));
-    tab.AddPeca(new Torre(Cor.Preta, tab), new Posicao(1, 3));
-    tab.AddPeca(new Rei(Cor.Preta, tab), new Posicao(0, 9));
-
-    Tela.ImprimirTabuleiro(tab);
-}catch(TabuleiroException e)
+}
+catch(TabuleiroException e)
 {
     Console.WriteLine(e.Message);
 }
