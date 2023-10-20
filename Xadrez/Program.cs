@@ -5,31 +5,45 @@ using Xadrez.Entities.Xadrez;
 
 try
 {
-    PosicaoXadrez pos = new PosicaoXadrez('a',1);
+    PosicaoXadrez pos = new PosicaoXadrez('a', 1);
     PartidaXadrez partida = new PartidaXadrez();
     while (!partida.terminada)
     {
-        Console.Clear();
-        Tela.ImprimirTabuleiro(partida.Tab);
-        Console.WriteLine();
-        Console.Write("Origem: ");
-        Posicao origem = Tela.LerPosicaoXadrez().toPosicao();
+        try
+        {
+            Console.Clear();
+            Tela.ImprimirTabuleiro(partida.Tab);
+            Console.WriteLine();
 
-        bool[,] posicoesP = partida.Tab.peca(origem).MovesP();
+            Console.WriteLine("Turno: " + partida.Turno);
+            Console.WriteLine("Aguardando da jogada: " + partida.JogadorAtual);
 
-        Console.Clear();
-        Tela.ImprimirTabuleiro(partida.Tab, posicoesP);
+            Console.WriteLine();
+            Console.Write("Origem: ");
+            Posicao origem = Tela.LerPosicaoXadrez().toPosicao();
+            partida.ValidarPosiOrigem(origem);
 
-        Console.WriteLine();
-        Console.Write("Destino: ");
-        Posicao destino = Tela.LerPosicaoXadrez().toPosicao();
-        Console.WriteLine(origem +" "+ destino);
+            bool[,] posicoesP = partida.Tab.peca(origem).MovesP();
 
-        partida.ExecutaMovimento(origem, destino);
+            Console.Clear();
+            Tela.ImprimirTabuleiro(partida.Tab, posicoesP);
+
+            Console.WriteLine();
+            Console.Write("Destino: ");
+            Posicao destino = Tela.LerPosicaoXadrez().toPosicao();
+            partida.ValidarPosiDestino(origem, destino);
+
+            partida.RealizaJogada(origem, destino);
+        }
+        catch (TabuleiroException e) 
+        {
+            Console.WriteLine(e.Message);
+            Console.ReadLine();
+        }
     }
 
 }
-catch(TabuleiroException e)
+catch (TabuleiroException e)
 {
     Console.WriteLine(e.Message);
 }

@@ -22,6 +22,26 @@ namespace Xadrez.Entities.Pecas
             QuantidadeMovimentos++;
         }
 
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovesP();
+            for (int i = 0; i < Tab.Linhas; i++)
+            {
+                for (int j = 0; j < Tab.Colunas; j++)
+                {
+                    if (mat[i, j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool podeMoverPara(Posicao posicao)
+        {
+            return MovesP()[posicao.Linha, posicao.Coluna];
+        }
         public abstract bool[,] MovesP();
     }
 }
