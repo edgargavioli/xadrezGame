@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Xadrez.Entities.Tabuleiro
+namespace Xadrez.Entities.Tabuleiros
 {
-    internal class Posicao
+    enum Cor
     {
+        Branca,
+        Preta,
+        Amarela
     }
 }
