@@ -12,11 +12,7 @@ try
         try
         {
             Console.Clear();
-            Tela.ImprimirTabuleiro(partida.Tab);
-            Console.WriteLine();
-
-            Console.WriteLine("Turno: " + partida.Turno);
-            Console.WriteLine("Aguardando da jogada: " + partida.JogadorAtual);
+            Tela.ImprimirPartida(partida);
 
             Console.WriteLine();
             Console.Write("Origem: ");
