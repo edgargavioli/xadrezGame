@@ -2,7 +2,7 @@
 
 namespace Xadrez.Entities.Pecas
 {
-    class Peca
+    abstract class Peca
     {
         public Posicao posicao { get; set; }
         public Cor CorP { get; protected set; }
@@ -21,5 +21,7 @@ namespace Xadrez.Entities.Pecas
         {
             QuantidadeMovimentos++;
         }
+
+        public abstract bool[,] MovesP();
     }
 }

@@ -32,6 +32,7 @@ namespace Xadrez.Entities.Xadrez
         private void ColocarPecas()
         {
             Tab.AddPeca(new Torre(Cor.Preta, Tab), new PosicaoXadrez('a',1).toPosicao());
+            Tab.AddPeca(new Rei(Cor.Preta, Tab), new PosicaoXadrez('a', 2).toPosicao());
         }
     }
 }

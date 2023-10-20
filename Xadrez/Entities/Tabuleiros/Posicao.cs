@@ -18,5 +18,11 @@ namespace Xadrez.Entities.Tabuleiros
                 +","
                 + Coluna;
         }
+
+        public void definirValores(int linha, int coluna)
+        {
+            Coluna = coluna;
+            Linha = linha;
+        }
     }
 }
