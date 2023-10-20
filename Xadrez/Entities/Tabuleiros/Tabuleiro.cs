@@ -18,5 +18,11 @@ namespace Xadrez.Entities.Tabuleiros
         {
             return Pecas[Linha, Coluna];
         }
+
+        public void AddPeca(Peca p, Posicao pos)
+        {
+            Pecas[pos.Linha, pos.Coluna] = p;
+            p.Posicao = pos;
+        }
     }
 }
