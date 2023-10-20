@@ -6,6 +6,12 @@ Tabuleiro tab = new Tabuleiro(8, 8);
 
 try
 {
+    PosicaoXadrez pos = new PosicaoXadrez('a',1);
+
+    Console.WriteLine(pos);
+
+    Console.WriteLine(pos.toPosicao());
+
     tab.AddPeca(new Torre(Cor.Preta, tab), new Posicao(0, 0));
     tab.AddPeca(new Torre(Cor.Preta, tab), new Posicao(1, 3));
     tab.AddPeca(new Rei(Cor.Preta, tab), new Posicao(0, 9));
