@@ -227,8 +227,8 @@ namespace Xadrez.Entities.Xadrez
             colocarNovaPeca('a', 1, new Torre(Cor.Branca, Tab));
             colocarNovaPeca('b', 1, new Cavalo(Cor.Branca, Tab));
             colocarNovaPeca('c', 1, new Bispo(Cor.Branca, Tab));
-            colocarNovaPeca('d', 1, new Rainha(Cor.Branca, Tab));
-            colocarNovaPeca('e', 1, new Rei(Cor.Branca, Tab));
+            colocarNovaPeca('e', 1, new Rainha(Cor.Branca, Tab));
+            colocarNovaPeca('d', 1, new Rei(Cor.Branca, Tab));
             colocarNovaPeca('f', 1, new Bispo(Cor.Branca, Tab));
             colocarNovaPeca('g', 1, new Cavalo(Cor.Branca, Tab));
             colocarNovaPeca('h', 1, new Torre(Cor.Branca, Tab));
