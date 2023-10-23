@@ -1,6 +1,7 @@
 ﻿using Xadrez.Entities.Tabuleiros;
 using Xadrez.Entities.Xadrez;
 
+
 namespace Xadrez.Entities.Pecas
 {
     class Rei : Peca
@@ -81,7 +82,7 @@ namespace Xadrez.Entities.Pecas
             {
                 mat[pos.Linha, pos.Coluna] = true;
             }
-
+            
             //#Jogada especial Roque
             if(QuantidadeMovimentos == 0 && !Partida.xeque)
             { //#ROQUE PEQUENO
@@ -108,7 +109,6 @@ namespace Xadrez.Entities.Pecas
                     }
                 }
             }
-
             return mat;
         }
 

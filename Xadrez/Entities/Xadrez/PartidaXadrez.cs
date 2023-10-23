@@ -132,13 +132,14 @@ namespace Xadrez.Entities.Xadrez
 
         public void RealizaJogada(Posicao origem, Posicao destino)
         {
-            
+
             Peca pecaCapturada = ExecutaMovimento(origem, destino);
             if (EstaEmXeque(JogadorAtual))
             {
                 DesfazMovimento(origem, destino, pecaCapturada);
                 throw new TabuleiroException("Você não pode se colocar em cheque");
             }
+
             Peca p = Tab.peca(destino);
             //#JOGADAESPECIAL
             if(p is Peao)
@@ -152,6 +153,7 @@ namespace Xadrez.Entities.Xadrez
                     pecas.Add(dama);
                 }
             }
+
             if (EstaEmXeque(Adversaria(JogadorAtual)))
             {
                 xeque = true;
@@ -170,7 +172,6 @@ namespace Xadrez.Entities.Xadrez
                 Turno++;
                 MudaJogador();
             }
-
            
             //#JOGADAESPECIAL
 
