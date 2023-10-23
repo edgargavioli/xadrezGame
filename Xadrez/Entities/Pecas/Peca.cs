@@ -21,6 +21,11 @@ namespace Xadrez.Entities.Pecas
         {
             QuantidadeMovimentos++;
         }
+        
+        public void DecrementarMoves()
+        {
+            QuantidadeMovimentos--;
+        }
 
         public bool ExisteMovimentosPossiveis()
         {
